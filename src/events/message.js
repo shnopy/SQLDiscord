@@ -19,7 +19,8 @@ module.exports = async (message) => {
         connection.query(`SELECT permission FROM permissions WHERE command="${existsSync(`${__dirname}/../commands/${command}.js`) ? command : message.client.CommandAliases.get(command)}"`, (error, result) => {
           if (error) throw new Error(error);
           let neededperms = result[0].permission ? result[0].permission.split(",") : [];
-          if (message.member.hasPermission(neededperms)) return new commandreal(message, args).run();
+          console.log(neededperms, message.member.hasPermission(neededperms, { checkAdmin: false, checkOwner: false }));
+          if (message.member.hasPermission(neededperms, { checkAdmin: false, checkOwner: false })) return new commandreal(message, args, neededperms).run();
           else message.reply(`Need:\n\`${neededperms.join("\n")}\``);
         });
       }
