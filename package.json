@@ -1,14 +1,8 @@
 {
-  "name": "mysqldiscord",
+  "name": "sqldiscord",
   "version": "1.0.0",
-  "description": "",
+  "description": "A discord bot made with Discord.js and MySQL",
   "main": "src/index.js",
-  "scripts": {
-    "test": "nodemon ."
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "discord.js": "^12.3.1",
     "dotenv": "^8.2.0",
@@ -17,5 +11,19 @@
   "devDependencies": {
     "eslint": "^7.6.0",
     "nodemon": "^2.0.4"
-  }
+  },
+  "scripts": {
+    "test": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shnopy/SQLDiscord.git"
+  },
+  "keywords": [],
+  "author": "shnopy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shnopy/SQLDiscord/issues"
+  },
+  "homepage": "https://github.com/shnopy/SQLDiscord#readme"
 }
