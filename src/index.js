@@ -6,8 +6,8 @@ const client = new Client({ disableEveryone: true });
 const events = readdirSync(`${__dirname}/events`).filter((f) => f.endsWith(".js"));
 const commands = readdirSync(`${__dirname}/commands`).filter((f) => f.endsWith(".js"));
 
-if (commands.length <= 0) console.error("No commands found!");
-if (events.length <= 0) console.error("No events found!");
+if (commands.length <= 0) throw new Error("No commands found!");
+if (events.length <= 0) throw new Error("No events found!");
 client.Commands = new Collection();
 client.CommandAliases = new Collection();
 
