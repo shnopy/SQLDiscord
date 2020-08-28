@@ -2,7 +2,7 @@
 
 * Dependencies
   * https://www.npmjs.com/package/mysql
-  * https://discord.js.org/#/docs
+  * https://www.npmjs.com/package/discord.js
   * https://www.npmjs.com/package/dotenv
 * DevDependencies
   * https://www.npmjs.com/package/eslint
