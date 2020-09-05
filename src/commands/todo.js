@@ -20,7 +20,7 @@ module.exports.main = class extends command {
       return;
     } else if (this.args[0] === "remove") {
       this.message.reply("Please give the id of the todo you wish to remove (`cancel` to cancel command)");
-      let collector = this.message.channel.createMessageCollector((m) => m.author.id === this.message.author.id, { time: 10000 });
+      let collector = this.collector();
 
       collector.on("collect", (msg) => {
         collector.stop();
@@ -35,7 +35,7 @@ module.exports.main = class extends command {
       return;
     }
     this.message.reply("Please give the todo that you would like to add (`cancel` to cancel command)");
-    let collector = this.message.channel.createMessageCollector((m) => m.author.id === this.message.author.id, { time: 10000 });
+    let collector = this.collector();
 
     collector.on("collect", (msg) => {
       collector.stop();
@@ -44,10 +44,6 @@ module.exports.main = class extends command {
         if (error) throw new Error(error);
         this.message.reply(`Added todo: ${msg.content}`);
       });
-    });
-
-    collector.on("end", (collected) => {
-      if (!collected.size) return this.message.reply("Cancelled: No reply recieved");
     });
   }
 };
